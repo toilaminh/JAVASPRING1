@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Level 1</title>
+        <link rel="stylesheet" th:href="@{lvl.css}">
+</head>
+<body>
+    <h1>All JavaCore Exercise with Spring boot</h1>
+    <ul>
+        <li id="lvll"><a href="/lvl1" id="lvla">Level 1</a></li>
+        <li><a href="/lvl2">Level 2</a></li>
+        <li><a href="/lvl3">Level 3</a></li>
+        <li><a href="/lvl4">Level 4</a></li>
+    </ul>
+    <br>
+        <div id="ex">
+            <h2>Exercise 1</h2>
+            <form action="/lvl1/ex1" method="post" modelAttribute="ex1">
+                <p>Num 1 <input type="number" name="num1" required></p>
+                <p>Num 2 <input type="number" name="num2" required></p>
+                <input type="submit" value="Submit" class="btn_submit">
+            </form>
+            <p>Result : <span th:text="${result1}"/></p>
+        </div>
+
+        <div id="ex">
+            <h2>Exercise 2</h2>
+            <form action="/lvl1/ex2" method="post" modelAttribute="ex2">
+                <p>String <input type="text" name="str1" th:value="${str1}" required></p>
+                <input type="submit" value="Submit">
+            </form>
+            <p>Result : <span th:text="${result2}"/></p>
+        </div>
+
+        <div id="ex">
+            <h2>Exercise 3</h2>
+            <form action="/lvl1/ex3" method="post" modelAttribute="ex3">
+                <p>Num <input type="number" name="num3" required></p>
+                <input type="submit" value="Submit">
+            </form>
+            <p>Result : <span th:text="${result3}"/></p>
+        </div>
+
+        <div id="ex">
+            <h2>Exercise 4</h2>
+            <script>
+                function generateInputs1() {
+                    const numElements = document.getElementById("numElements1").value;
+                    const container = document.getElementById("arrayInputs1");
+                    container.innerHTML = ""; // Clear existing inputs
+        
+                    for (let i = 0; i < numElements; i++) {
+                        const input = document.createElement("input");
+                        input.type = "number";
+                        input.name = "elements1";
+                        input.placeholder = `Element ${i + 1}`;
+                        input.required = true;
+                        container.appendChild(input);
+                        container.appendChild(document.createElement("br"));
+                    }
+                }
+            </script>
+            <form action="/lvl1/ex4" method="post" modelAttribute="ex4">
+                <label for="numElements1">Number of Elements:</label>
+                <input type="number" id="numElements1" name="numElements1" min="1" required>
+                <input type="button" onclick="generateInputs1()" class="btn_ex" value="Generate"/>
+                <div id="arrayInputs1"></div>
+                <input type="submit" value="Submit">
+            </form>
+            <p>Result : <span th:text="${result4}"/></p>
+        </div>
+
+        <div id="ex">
+            <h2>Exercise 5</h2>
+            <script>
+                function generateInputs2() {
+                    const numElements = document.getElementById("numElements2").value;
+                    const container = document.getElementById("arrayInputs2");
+                    container.innerHTML = ""; // Clear existing inputs
+        
+                    for (let i = 0; i < numElements; i++) {
+                        const input = document.createElement("input");
+                        input.type = "text";
+                        input.name = "elements2";
+                        input.placeholder = `Element ${i + 1}`;
+                        input.required = true;
+                        container.appendChild(input);
+                        container.appendChild(document.createElement("br"));
+                    }
+                }
+            </script>
+            <form action="/lvl1/ex5" method="post" modelAttribute="ex5">
+                <label for="numElements2">Number of Elements:</label>
+                <input type="number" id="numElements2" name="numElements2" min="1" required>
+                <input type="button" onclick="generateInputs2()" class="btn_ex" value="Generate"/>
+                <div id="arrayInputs2"></div>
+                <input type="submit" value="Submit">
+            </form>
+            <p>Result : <span th:text="${result5}"/></p>
+        </div>
+
+        <div id="ex">
+            <h2>Exercise 6</h2>
+            <script>
+                function generateInputs3() {
+                    const numElements = document.getElementById("numElements3").value;
+                    const container = document.getElementById("arrayInputs3");
+                    container.innerHTML = ""; // Clear existing inputs
+        
+                    for (let i = 0; i < numElements; i++) {
+                        const input = document.createElement("input");
+                        input.type = "number";
+                        input.name = "elements3";
+                        input.placeholder = `Element ${i + 1}`;
+                        input.required = true;
+                        container.appendChild(input);
+                        container.appendChild(document.createElement("br"));
+                    }
+                }
+            </script>
+            <form action="/lvl1/ex6" method="post" modelAttribute="ex6">
+                <label for="numElements3">Number of Elements:</label>
+                <input type="number" id="numElements3" name="numElements3" min="1" required>
+                <input type="button" onclick="generateInputs3()" class="btn_ex" value="Generate"/>
+                <div id="arrayInputs3"></div>
+                <input type="submit" value="Submit">
+            </form>
+            <p>Result : <span th:text="${result6}"/></p>
+        </div>
+
+        <div id="ex">
+            <h2>Exercise 7</h2>
+            <script>
+                function generateInputs4() {
+                    const numElements = document.getElementById("numElements4").value;
+                    const container = document.getElementById("arrayInputs4");
+                    container.innerHTML = ""; // Clear existing inputs
+        
+                    for (let i = 0; i < numElements; i++) {
+                        const input = document.createElement("input");
+                        input.type = "text";
+                        input.name = "elements4";
+                        input.placeholder = `Element ${i + 1}`;
+                        input.required = true;
+                        container.appendChild(input);
+                        container.appendChild(document.createElement("br"));
+                    }
+                }
+            </script>
+            <form action="/lvl1/ex7" method="post" modelAttribute="ex7">
+                <label for="numElements4">Number of Elements:</label>
+                <input type="number" id="numElements4" name="numElements4" min="1" required>
+                <input type="button" onclick="generateInputs4()" class="btn_ex" value="Generate"/>
+                <div id="arrayInputs4"></div>
+                <input type="submit" value="Submit">
+            </form>
+            <p>Result : <span th:text="${result7}"/></p>
+        </div>
+
+        <div id="ex">
+            <h2>Exercise 8</h2>
+            <script>
+                function generateInputs5() {
+                    const numElements = document.getElementById("numElements5").value;
+                    const container = document.getElementById("arrayInputs5");
+                    container.innerHTML = ""; // Clear existing inputs
+        
+                    for (let i = 0; i < numElements; i++) {
+                        const input = document.createElement("input");
+                        input.type = "number";
+                        input.name = "elements5";
+                        input.placeholder = `Element ${i + 1}`;
+                        input.required = true;
+                        container.appendChild(input);
+                        container.appendChild(document.createElement("br"));
+                    }
+                }
+            </script>
+            <form action="/lvl1/ex8" method="post" modelAttribute="ex8">
+                <label for="numElements5">Number of Elements:</label>
+                <input type="number" id="numElements5" name="numElements5" min="1" required>
+                <input type="button" onclick="generateInputs5()" class="btn_ex" value="Generate"/>
+                <div id="arrayInputs5"></div>
+                <input type="submit" value="Submit">
+            </form>
+            <p>Result : <span th:text="${result8}"/></p>
+        </div>
+
+        <div id="ex">
+            <h2>Exercise 9</h2>
+            <form action="/lvl1/ex9" method="post" modelAttribute="ex9">
+                <p>String <input type="text" name="str2" th:value="${str2}" required></p>
+                <input type="submit" value="Submit">
+            </form>
+            <p>Result : <span th:text="${result9}"/></p>
+        </div>
+
+        <div id="ex">
+            <h2>Exercise 10</h2>
+            <script>
+                function generateInputs6() {
+                    const numElements = document.getElementById("numElements6").value;
+                    const container = document.getElementById("arrayInputs6");
+                    container.innerHTML = ""; // Clear existing inputs
+        
+                    for (let i = 0; i < numElements; i++) {
+                        const input = document.createElement("input");
+                        input.type = "text";
+                        input.name = "elements6";
+                        input.placeholder = `Element ${i + 1}`;
+                        input.required = true;
+                        container.appendChild(input);
+                        container.appendChild(document.createElement("br"));
+                    }
+                }
+            </script>
+            <form action="/lvl1/ex10" method="post" modelAttribute="ex10">
+                <label for="numElements6">Number of Elements:</label>
+                <input type="number" id="numElements6" name="numElements6" min="1" required>
+                <input type="button" onclick="generateInputs6()" class="btn_ex" value="Generate"/>
+                <div id="arrayInputs6"></div>
+                <input type="submit" value="Submit">
+            </form>
+            <p>Result : <span th:text="${result10}"/></p>
+        </div>
+
+</body>
+</html>
+</html>
