@@ -2,12 +2,14 @@ package com.example.javaspring1.services;
 
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 @Service
 public class Service1 {
-    public int biggestNumber(List<Integer> arr){
-        int biggest = arr.get(0);
-        for(int i : arr){
+    public double biggestNumber(double[] arr){
+        double biggest = arr[0];
+        for(double i : arr){
             if(biggest < i){
                 biggest = i;
             }
@@ -15,17 +17,18 @@ public class Service1 {
         return biggest;
     }
 
-    public String shortestString(List<String> arr){
-        String shortest = arr.get(0);
-        for(int i = 0;i < arr.size();i++){
-            if(arr.get(i).length() < shortest.length()){
-                shortest = arr.get(i);
+    public String shortestString(String[] arr){
+        String shortest = arr[0];
+        for(int i = 0;i < arr.length;i++){
+            if(arr[i].length() < shortest.length()){
+                shortest = arr[i];
             }
         }
         return shortest;
     }
 
-    public String smest2bestINT(List<Integer> arr){
+    public String smest2bestINT(int[] arr){
+        Arrays.sort(arr);
         String res = "";
         for (int i : arr){
             res += i + " ";
@@ -33,7 +36,8 @@ public class Service1 {
         return res;
     }
 
-    public String smest2bestSTRING(List<String> arr){
+    public String smest2bestSTRING(String[] arr){
+        Arrays.sort(arr);
         String res = "";
         for (String i : arr){
             res += i + " ";
@@ -41,12 +45,12 @@ public class Service1 {
         return res;
     }
 
-    public double medianNumber(List<Double> arr){
-        if(arr.size() % 2 == 1){
-             return arr.get((arr.size() + 1)/2 - 1);
+    public double medianNumber(double[] arr){
+        if(arr.length % 2 == 1){
+             return arr[(arr.length + 1)/2 - 1];
         }
         else {
-            return  (arr.get((arr.size() - 1)/2) + arr.get((arr.size() + 1)/2))/2;
+            return  (arr[((arr.length - 1)/2)] + arr[(arr.length + 1)/2])/2;
         }
     }
 
@@ -66,7 +70,7 @@ public class Service1 {
         return word_num;
     }
 
-    public int numberOfStrCtnA(List<String> str){
+    public int numberOfStrCtnA(String[] str){
         int str_ca = 0;
         for(String s : str){
             if (s.contains("a")){
