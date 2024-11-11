@@ -1,6 +1,6 @@
-package com.example.javaspring1.controller;
+package com.example.javaspring1.controller.core1;
 
-import com.example.javaspring1.services.Service3;
+import com.example.javaspring1.services.core1.ServiceJV1_3;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,34 +8,34 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
-@RequestMapping("/lvl3")
+@RequestMapping("/jv1/lvl3")
 public class Level3 {
     @Autowired
-    Service3 service3;
+    ServiceJV1_3 serviceJV13;
 
     @PostMapping("/ex1")
     public double ex1(@RequestBody double[] arr){
-        return service3.secondSmallest(arr);
+        return serviceJV13.secondSmallest(arr);
     }
 
     @PostMapping("/ex2")
     public int ex2(@RequestBody int[] arr){
-        return service3.biggestDiff(arr);
+        return serviceJV13.biggestDiff(arr);
     }
 
     @PostMapping("/ex3")
     public int ex3(@RequestBody int[] arr){
-        return service3.lengthOfLongestINC(arr);
+        return serviceJV13.lengthOfLongestINC(arr);
     }
 
     @PostMapping("/ex4")
     public String[] ex4(@RequestBody String[] arr){
-        return service3.twoStringBestOverlap(arr);
+        return serviceJV13.twoStringBestOverlap(arr);
     }
 
     @PostMapping("/ex5")
     public int ex5(@RequestBody int[] arr){
-        return service3.smallestSum(arr);
+        return serviceJV13.smallestSum(arr);
     }
 
     @PostMapping("/ex6")
@@ -51,17 +51,17 @@ public class Level3 {
         }
         Arrays.sort(arr);
         System.out.println(arr1 + " " + arr2 + " " + arr);
-        return service3.medianNumber(arr1, arr2);
+        return serviceJV13.medianNumber(arr1, arr2);
     }
 
     @PostMapping("/ex7")
     public int ex7(@RequestParam String str){
-        return service3.longestPalindrome(str);
+        return serviceJV13.longestPalindrome(str);
     }
 
     @PostMapping("/ex10")
     public String[] ex10(@RequestBody String[] str){
-        return service3.sortedStringLV3(str);
+        return serviceJV13.sortedStringLV3(str);
     }
 }
 

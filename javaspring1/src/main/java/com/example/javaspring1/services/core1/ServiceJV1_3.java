@@ -1,4 +1,4 @@
-package com.example.javaspring1.services;
+package com.example.javaspring1.services.core1;
 
 import org.springframework.stereotype.Service;
 
@@ -6,10 +6,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 
 @Service
-public class Service3 {
+public class ServiceJV1_3 {
     public double secondSmallest(double[] arr){
         double sec_number = 0.0F;
         for(int i = 0; i < arr.length; ++i) {
