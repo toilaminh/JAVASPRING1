@@ -1,9 +1,9 @@
-package com.example.javaspring1.services;
+package com.example.javaspring1.services.core1;
 
 import org.springframework.stereotype.Service;
 
 @Service
-public class Service2 {
+public class ServiceJV1_2 {
     public double secLargestNumber(double[] arr){
         double arr_large = arr.length;
         double sec_number = 0;

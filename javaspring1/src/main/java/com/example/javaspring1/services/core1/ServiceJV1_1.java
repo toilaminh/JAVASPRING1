@@ -1,12 +1,11 @@
-package com.example.javaspring1.services;
+package com.example.javaspring1.services.core1;
 
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+
 @Service
-public class Service1 {
+public class ServiceJV1_1 {
     public double biggestNumber(double[] arr){
         double biggest = arr[0];
         for(double i : arr){
