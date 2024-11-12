@@ -6,10 +6,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ActorDto {
+//    private Integer id;
     private String firstName;
     private String lastName;
     public ActorDto(String fn, String ln){
-        firstName = fn;
-        lastName = ln;
+//        this.id = id;
+        this.firstName = fn;
+        this.lastName = ln;
     }
 }

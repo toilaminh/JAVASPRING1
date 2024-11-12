@@ -19,10 +19,10 @@ public class Address {
     private String postalCode;
     private String phone;
     private String location;
-    @Column(name = "last_update")
-    private String lastUpdate;
 
     @ManyToOne
     @JoinColumn(name = "city_id")
     private City cityId;
+
+
 }

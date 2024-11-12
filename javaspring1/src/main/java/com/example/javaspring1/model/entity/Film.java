@@ -1,11 +1,10 @@
 package com.example.javaspring1.model.entity;
 
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
+import java.util.Set;
 
 @Entity(name = "film")
 @Getter
@@ -26,18 +25,20 @@ public class Film {
     private Integer length;
     @Column(name = "replacement_cost")
     private Double replacementCost;
-    private FilmRating rating;
+    private String rating;
     @Column(name = "special_features")
     private String specialFeature;
-    @Column(name = "last_update")
-    private LocalDate lastUpadte;
 
+    @Transient
     @ManyToOne
     @JoinColumn(name = "language_id")
     private Language languageId;
 
-    @Column(name = "original_language_id")
+    @Transient
     @ManyToOne
     @JoinColumn(name = "language_id")
     private Language originalLanguageId;
+
+    @OneToMany(mappedBy = "film")
+    private Set<FilmActor> filmActors;
 }

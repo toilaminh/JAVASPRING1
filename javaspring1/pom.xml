@@ -96,7 +96,6 @@
 			<version>8.0.33</version> <!-- use the latest version available -->
 		</dependency>
 
-
 	</dependencies>
 
 	<build>

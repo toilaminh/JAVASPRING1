@@ -14,8 +14,6 @@ public class City {
     @Column(name = "city_id")
     private Integer id;
     private String city;
-    @Column(name = "last_update")
-    private LocalDate lastUpdate;
 
     @ManyToOne
     @JoinColumn(name = "country_id")

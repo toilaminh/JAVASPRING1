@@ -11,8 +11,7 @@ import java.util.List;
 
 @Repository
 public interface ActorRepository extends CrudRepository<Actor, Integer>, JpaRepository<Actor,Integer> {
-    @Query(value = "SELECT a.first_name,a.last_name FROM actor a ORDER BY a.actor_id", nativeQuery = true)
+    @Query(value = "SELECT * FROM actor a ORDER BY a.actor_id", nativeQuery = true)
 //    @Query("SELECT new com.example.javaspring1.model.dto.sql.ActorDto(a.firstName, a.lastName) FROM actor a")
-    List<Actor> findAllFirstnameAndLastname();
-
+    List<Actor> findAll();
 }

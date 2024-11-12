@@ -16,12 +16,12 @@ public class Language {
     @Column(name = "address_id")
     private Integer id;
     private String name;
-    @Column(name = "last_update")
-    private LocalDate lastUpdate;
 
+    @Transient
     @OneToMany(mappedBy = "languageId")
     private Set<Film> film1;
 
+    @Transient
     @OneToMany(mappedBy = "originalLanguageId")
     private Set<Film> film2;
 }

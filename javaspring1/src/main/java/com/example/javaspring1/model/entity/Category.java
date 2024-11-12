@@ -15,6 +15,4 @@ public class Category {
     @Column(name = "category_id")
     private Integer id;
     private String name;
-    @Column(name = "last_update")
-    private LocalDate lastUpdate;
 }

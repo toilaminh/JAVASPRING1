@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity(name = "actor")
 @Getter
@@ -18,6 +19,8 @@ public class Actor {
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
-    @Column(name = "last_update")
-    private LocalDate lastUpdate;
+
+    @OneToMany(mappedBy = "actor")
+    private Set<FilmActor> filmActors;
+
 }

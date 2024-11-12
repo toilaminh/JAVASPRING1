@@ -15,6 +15,4 @@ public class Country {
     @Column(name = "country_id")
     private Integer id;
     private String country;
-    @Column(name = "last_update")
-    private LocalDate lastUpdate;
 }
