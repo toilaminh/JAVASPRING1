@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity(name = "category")
 @Getter
@@ -15,4 +16,7 @@ public class Category {
     @Column(name = "category_id")
     private Integer id;
     private String name;
+
+    @OneToMany(mappedBy = "category")
+    private Set<FilmCategory> filmCategories;
 }

@@ -13,15 +13,15 @@ import java.util.Set;
 public class Language {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "address_id")
+    @Column(name = "language_id")
     private Integer id;
     private String name;
 
     @Transient
-    @OneToMany(mappedBy = "languageId")
+    @OneToMany(mappedBy = "language")
     private Set<Film> film1;
 
     @Transient
-    @OneToMany(mappedBy = "originalLanguageId")
+    @OneToMany(mappedBy = "originalLanguage")
     private Set<Film> film2;
 }

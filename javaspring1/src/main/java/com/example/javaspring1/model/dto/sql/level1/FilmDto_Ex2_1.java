@@ -1,12 +1,11 @@
-package com.example.javaspring1.model.dto.sql;
+package com.example.javaspring1.model.dto.sql.level1;
 
-import com.example.javaspring1.model.entity.FilmRating;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class FilmDto {
+public class FilmDto_Ex2_1 {
 //    private Integer id;
     private String title;
 //    private String description;
@@ -17,11 +16,7 @@ public class FilmDto {
     private Double rentalRate;
 //    private Integer length;
     private Double replacementCost;
-    private String rating;
+//    private FilmRating rating;
 //    private String specialFeature;
-    public FilmDto(String title, Double rentalRate, Double replacementCost, String rating){
-        this.title = title;
-        this.rentalRate = rentalRate;
-        this.replacementCost = replacementCost;
-    }
+
 }

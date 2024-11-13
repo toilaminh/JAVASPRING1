@@ -1,5 +1,7 @@
 package com.example.javaspring1.model.entity;
 
+import com.example.javaspring1.model.entity.fenum.FilmRating;
+import com.example.javaspring1.model.entity.fenum.FilmRatingConverter;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,20 +27,27 @@ public class Film {
     private Integer length;
     @Column(name = "replacement_cost")
     private Double replacementCost;
-    private String rating;
+    @Convert(converter = FilmRatingConverter.class)
+    private FilmRating rating;
     @Column(name = "special_features")
     private String specialFeature;
 
     @Transient
     @ManyToOne
     @JoinColumn(name = "language_id")
-    private Language languageId;
+    private Language language;
 
     @Transient
     @ManyToOne
     @JoinColumn(name = "language_id")
-    private Language originalLanguageId;
+    private Language originalLanguage;
 
     @OneToMany(mappedBy = "film")
     private Set<FilmActor> filmActors;
+
+    @OneToMany(mappedBy = "film")
+    private Set<FilmCategory> filmCategories;
+
+    @OneToMany(mappedBy = "film")
+    private Set<Inventory> inventories;
 }
