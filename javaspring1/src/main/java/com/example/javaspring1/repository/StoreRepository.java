@@ -11,6 +11,7 @@ import java.util.List;
 
 @Repository
 public interface StoreRepository extends JpaRepository<Store, Integer> {
+    //Level1
     @Query("SELECT new com.example.javaspring1.model.dto.sql.level1.StoreDto_Ex6_1(s.id, SUM(p.amount))\n" +
             "FROM store s\n" +
             "JOIN s.staff st ON s.manager.id = st.id\n" +

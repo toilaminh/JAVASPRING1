@@ -32,12 +32,12 @@ public class Staff {
     @JoinColumn(name = "store_id")
     private Store store;
 
-    @OneToMany(mappedBy = "manager")
+    @OneToMany(mappedBy = "manager", cascade = CascadeType.ALL)
     private Set<Store> stores;
 
-    @OneToMany(mappedBy = "staff")
+    @OneToMany(mappedBy = "staff", cascade = CascadeType.ALL)
     private Set<Payment> payments;
 
-    @OneToMany(mappedBy = "staff")
+    @OneToMany(mappedBy = "staff", cascade = CascadeType.ALL)
     private Set<Rental> rentals;
 }

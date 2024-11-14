@@ -1,10 +1,6 @@
 package com.example.javaspring1.controller.mysql;
 
-import com.example.javaspring1.model.dto.sql.level1.CustomerDto_Ex5_1;
-import com.example.javaspring1.model.dto.sql.level2.ActorDto_Ex4_2;
-import com.example.javaspring1.model.dto.sql.level2.CustomerDto_Ex1_2;
-import com.example.javaspring1.model.dto.sql.level2.CustomerDto_Ex2_2;
-import com.example.javaspring1.model.dto.sql.level2.FilmDto_Ex3_2;
+import com.example.javaspring1.model.dto.sql.level2.*;
 import com.example.javaspring1.services.sql.ActorService;
 import com.example.javaspring1.services.sql.CustomerService;
 import com.example.javaspring1.services.sql.FilmService;
@@ -44,4 +40,34 @@ public class Sql2 {
     public List<ActorDto_Ex4_2> findAllActorsWhoAppearedAtLeastOnceInEachCategory(){
         return actorService.findAllActorsWhoAppearedAtLeastOnceInEachCategory();
     }
-}
+
+    @GetMapping("/ex5")
+    public List<CustomerDto_Ex5_2> findCustomersRentedSameFilmMoreThanOnce(){
+        return customerService.findCustomersRentedSameFilmMoreThanOnce();
+    }
+
+    @GetMapping("/ex6")
+    public List<ActorDto_Ex6_2> totalRevenueGeneratedByEachActor(){
+        return actorService.totalRevenueGeneratedByEachActor();
+    }
+
+    @GetMapping("/ex7")
+    public List<ActorDto_Ex7_2> findActorsWhoAppearedInRButG(){
+        return actorService.findActorsWhoAppearedInRButG();
+    }
+
+    @GetMapping("/ex8")
+    public List<FilmDto_Ex8_2> findAllFilmsWhichRentedMoreThan50() {
+        return filmService.findAllFilmsWhichRentedMoreThan50();
+    }
+
+    @GetMapping("/ex9")
+    public List<CustomerDto_Ex9_2> findCustomersRentedFilmFromCategoryThatNeverRentedBefore(){
+        return customerService.findCustomersRentedFilmFromCategoryThatNeverRentedBefore();
+    }
+
+    @GetMapping("/ex10")
+    public List<FilmDto_Ex10_2> findAllFilmRentedByAllCustomersButAction(){
+        return filmService.findAllFilmRentedByAllCustomersButAction();
+    }
+ }

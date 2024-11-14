@@ -20,7 +20,7 @@ public class Actor {
     @Column(name = "last_name")
     private String lastName;
 
-    @OneToMany(mappedBy = "actor")
+    @OneToMany(mappedBy = "actor", cascade = CascadeType.ALL)
     private Set<FilmActor> filmActors;
 
 }

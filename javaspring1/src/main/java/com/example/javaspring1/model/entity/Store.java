@@ -23,12 +23,12 @@ public class Store {
     @JoinColumn(name = "address_id")
     private Address address;
 
-    @OneToMany(mappedBy = "store")
+    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
     private Set<Inventory> inventories;
 
-    @OneToMany(mappedBy = "store")
+    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
     private Set<Staff> staff;
 
-    @OneToMany(mappedBy = "store")
+    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
     private Set<Customer> customers;
 }

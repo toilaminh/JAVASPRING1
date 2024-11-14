@@ -31,6 +31,6 @@ public class Rental {
     @JoinColumn(name = "staff_id")
     private Staff staff;
 
-    @OneToMany(mappedBy = "rental")
+    @OneToMany(mappedBy = "rental", cascade = CascadeType.ALL)
     private Set<Payment> payments;
 }

@@ -3,6 +3,12 @@ package com.example.javaspring1.services.sql;
 import com.example.javaspring1.model.dto.sql.level1.ActorDto_Ex1_1;
 import com.example.javaspring1.model.dto.sql.level1.ActorDto_Ex7_1;
 import com.example.javaspring1.model.dto.sql.level2.ActorDto_Ex4_2;
+import com.example.javaspring1.model.dto.sql.level2.ActorDto_Ex6_2;
+import com.example.javaspring1.model.dto.sql.level2.ActorDto_Ex7_2;
+import com.example.javaspring1.model.dto.sql.level3.ActorDto_Ex10_3;
+import com.example.javaspring1.model.dto.sql.level3.ActorDto_Ex1_3;
+import com.example.javaspring1.model.dto.sql.level3.ActorDto_Ex2_3;
+import com.example.javaspring1.model.dto.sql.level3.ActorDto_Ex6_3;
 import com.example.javaspring1.model.entity.Actor;
 import com.example.javaspring1.repository.ActorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +40,30 @@ public class ActorService {
     //Level2
     public List<ActorDto_Ex4_2> findAllActorsWhoAppearedAtLeastOnceInEachCategory(){
         return actorRepository.findAllActorsWhoAppearedAtLeastOnceInEachCategory();
+    }
+
+    public List<ActorDto_Ex6_2> totalRevenueGeneratedByEachActor(){
+        return actorRepository.totalRevenueGeneratedByEachActor();
+    }
+
+    public List<ActorDto_Ex7_2> findActorsWhoAppearedInRButG(){
+        return actorRepository.findActorsWhoAppearedInRButG();
+    }
+
+    //Level3
+    public List<ActorDto_Ex1_3> avgRentalDuration(){
+        return actorRepository.avgRentalDuration();
+    }
+
+    public List<ActorDto_Ex2_3> findActorsAppearedIn2HoursFilmRButG(){
+        return actorRepository.findActorsAppearedIn2HoursFilmRButG();
+    }
+
+    public List<ActorDto_Ex6_3> allActorsWhoAppearedWithEveryOtherActorsAtLeastOnce(){
+        return actorRepository.allActorsWhoAppearedWithEveryOtherActorsAtLeastOnce();
+    }
+
+    public List<ActorDto_Ex10_3> findActorAppearedInPG13MoreThan2AndRMoreThan1_5(){
+        return actorRepository.findActorAppearedInPG13MoreThan2AndRMoreThan1_5();
     }
 }

@@ -5,13 +5,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CustomerDto_Ex1_2 {
+public class CustomerDto_Ex5_2 {
     private String firstName;
     private String lastName;
-    private Double sum; //Sum use Double
-    public CustomerDto_Ex1_2(String firstName, String lastName, Double sum){
+    private Long count; //Count use Long
+    public CustomerDto_Ex5_2(String firstName, String lastName, Long count){
         this.firstName = firstName;
         this.lastName = lastName;
-        this.sum = sum;
+        this.count = count;
     }
 }

@@ -8,7 +8,7 @@ import lombok.Setter;
 public class CategoryDto_Ex4_1 {
 //    private Integer id;
     private String name;
-    private Double avg;
+    private Double avg; //Average use Double
     public CategoryDto_Ex4_1(String name, Double avg){
 //        this.id = id;
         this.name = name;
