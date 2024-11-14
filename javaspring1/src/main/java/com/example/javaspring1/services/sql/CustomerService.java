@@ -3,7 +3,15 @@ package com.example.javaspring1.services.sql;
 import com.example.javaspring1.model.dto.sql.level1.CustomerDto_Ex5_1;
 import com.example.javaspring1.model.dto.sql.level2.CustomerDto_Ex1_2;
 import com.example.javaspring1.model.dto.sql.level2.CustomerDto_Ex2_2;
+import com.example.javaspring1.model.dto.sql.level2.CustomerDto_Ex5_2;
+import com.example.javaspring1.model.dto.sql.level2.CustomerDto_Ex9_2;
+import com.example.javaspring1.model.dto.sql.level3.CustomerDto_Ex3_3;
+import com.example.javaspring1.model.dto.sql.level3.CustomerDto_Ex4_3;
+import com.example.javaspring1.model.dto.sql.level3.CustomerDto_Ex7_3;
+import com.example.javaspring1.model.dto.sql.level3.CustomerDto_Ex9_3;
+import com.example.javaspring1.model.entity.Customer;
 import com.example.javaspring1.repository.CustomerRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,4 +35,39 @@ public class CustomerService {
     public List<CustomerDto_Ex2_2> findCustomerRentedAllCategories(){
         return customerRepository.findCustomerRentedAllCategories();
     }
+
+    public List<CustomerDto_Ex5_2> findCustomersRentedSameFilmMoreThanOnce(){
+        return customerRepository.findCustomersRentedSameFilmMoreThanOnce();
+    }
+
+    public List<CustomerDto_Ex9_2> findCustomersRentedFilmFromCategoryThatNeverRentedBefore(){
+        return customerRepository.findCustomersRentedFilmFromCategoryThatNeverRentedBefore();
+    }
+
+    //Level3
+    public List<CustomerDto_Ex3_3> findAllCustomersRentedMoreThan10Films(){
+        return customerRepository.findAllCustomersRentedMoreThan10Films();
+    }
+
+    public List<CustomerDto_Ex4_3> allCustomersRentedAllFilmsFromOneCategory(){
+        return customerRepository.allCustomersRentedAllFilmsFromOneCategory();
+    }
+
+    public List<CustomerDto_Ex7_3> findAllCustomerRentedAtLeastOnceFilmFromEveryCategory(){
+        return customerRepository.findAllCustomerRentedAtLeastOnceFilmFromEveryCategory();
+    }
+
+    public List<CustomerDto_Ex9_3> findCustomersRentedFilmFromCategoryThatNeverRentedBeforeAndNeverRentedAFilmLonger3Hours(){
+        return customerRepository.findCustomersRentedFilmFromCategoryThatNeverRentedBeforeAndNeverRentedAFilmLonger3Hours();
+    }
+
+    // Level4
+    @Transactional
+    public void updateEmailOfAllCustomersHorror102002(){
+        List<Customer> customers = customerRepository.listCustomersUpdate4();
+        customers.forEach(f -> f.setEmail("horrorlover" + f.getEmail()));
+        customerRepository.saveAll(customers);
+    }
+
+
 }

@@ -20,15 +20,19 @@ public class Address {
     @Column(name = "postal_code")
     private String postalCode;
     private String phone;
-    private String location;
+    @Column(name = "location", columnDefinition = "POINT")
+    private byte[] location;
 
     @ManyToOne
     @JoinColumn(name = "city_id")
     private City city;
 
-    @OneToMany(mappedBy = "address")
+    @OneToMany(mappedBy = "address", cascade = CascadeType.ALL)
     private Set<Store> stores;
 
-    @OneToMany(mappedBy = "address")
+    @OneToMany(mappedBy = "address", cascade = CascadeType.ALL)
     private Set<Staff> staffs;
+
+    @OneToMany(mappedBy = "address", cascade = CascadeType.ALL)
+    private Set<Customer> customers;
 }

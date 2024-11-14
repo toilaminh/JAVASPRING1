@@ -290,6 +290,9 @@ public class ServiceJV4 {
             List<HashMap<String, HashMap<String, Double>>> day_data = new ArrayList<>();
             EmpData eData = new EmpData();
             double m_salary = 0;
+            System.out.println("= = = = = = = = = = = = = = = = = = =");
+            System.out.println("\tID            : " + emp.get(i).getID());
+            System.out.println("\tEmployee name : " + emp.get(i).getNAME());
             // Get emp data first
             eData.setEMP(emp.get(i));
 
@@ -308,15 +311,19 @@ public class ServiceJV4 {
                 if (total_day_work_hour == 0) {
                     continue;
                 }
+                System.out.print("\tDay " + String.format("%-2s", j + 1) + " [ ");
                 String dayName = "Day " + (j + 1);
                 double day_salary = 0;
                 for (String work_type : e_day.keySet()) {
                     if (e_day.get(work_type) > 0) {
                         day_salary += e_salary.get(work_type) * e_day.get(work_type);
+                        System.out.print(work_type + " : " + e_day.get(work_type) + " | ");
                         temp.put(work_type,e_day.get(work_type));
                     }
                 }
+                System.out.print("Total work hour: " + total_day_work_hour);
                 temp.put("Total work hour", total_day_work_hour);
+                System.out.println(" | Day salary: " + String.format("%.0f", day_salary) + " ]");
                 temp.put("Day salary",day_salary);
                 month_salary += day_salary;
                 dayDataDetail.put(dayName, temp);

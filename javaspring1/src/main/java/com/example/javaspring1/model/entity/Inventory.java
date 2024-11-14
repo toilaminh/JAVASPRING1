@@ -21,6 +21,6 @@ public class Inventory {
     @JoinColumn(name = "store_id")
     private Store store;
 
-    @OneToMany(mappedBy = "inventory")
+    @OneToMany(mappedBy = "inventory", cascade = CascadeType.ALL)
     private Set<Rental> rentals;
 }

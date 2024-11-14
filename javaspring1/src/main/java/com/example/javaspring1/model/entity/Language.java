@@ -18,10 +18,10 @@ public class Language {
     private String name;
 
     @Transient
-    @OneToMany(mappedBy = "language")
+    @OneToMany(mappedBy = "language", cascade = CascadeType.ALL)
     private Set<Film> film1;
 
     @Transient
-    @OneToMany(mappedBy = "originalLanguage")
+    @OneToMany(mappedBy = "originalLanguage", cascade = CascadeType.ALL)
     private Set<Film> film2;
 }

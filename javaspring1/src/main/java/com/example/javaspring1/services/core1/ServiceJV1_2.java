@@ -5,18 +5,20 @@ import org.springframework.stereotype.Service;
 @Service
 public class ServiceJV1_2 {
     public double secLargestNumber(double[] arr){
-        int arr_large = arr.length;
-        double largest = 0;
+        double arr_large = arr.length;
         double sec_number = 0;
         for (int i = 0; i < arr_large; i++)
         {
-            if (arr[i] > largest){
-                largest = arr[i];
+            int num_of_bigger = 0;
+            for (int j = 0; j < arr_large; j++){
+                if(arr[j] > arr[i]){
+                    num_of_bigger += 1;
+                }
             }
-        }
-        for (int i = 0; i < arr_large;i++){
-            if(arr[i] > sec_number && arr[i] != largest){
+            if(num_of_bigger == 1)
+            {
                 sec_number = arr[i];
+                break;
             }
         }
         return sec_number;

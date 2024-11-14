@@ -11,6 +11,33 @@ import java.util.HashMap;
 
 @Service
 public class ServiceJV2 {
+    private final HashMap<String, ObjEx8> products = new HashMap<>();
+
+    public void addProduct(ObjEx8 product) {
+        products.put(product.getId(), product);
+    }
+
+    public HashMap<String, ObjEx8> getAllProducts() {
+        return products;
+    }
+
+    public ObjEx8 findInfoProductBasedOnId(String id) {
+        return products.get(id);
+    }
+
+    public boolean removeProductBasedOnId(String id) {
+        return products.remove(id) != null;
+    }
+
+    public boolean updateInfoProduct(ObjEx8 product) {
+        if(products.containsKey(product.getId())) {
+            products.put(product.getId(), product);
+            return true;
+        }
+        return false;
+    }
+
+
     public int sumArrList(ArrayList<Integer> arr){
         int sum = 0;
         for (int i : arr){
@@ -47,38 +74,5 @@ public class ServiceJV2 {
             }
         }
         return null;
-    }
-
-    private final HashMap<String, ObjEx8> products = new HashMap<>();
-
-    public void addProduct(ObjEx8 product) {
-        products.put(product.getId(), product);
-    }
-
-    public HashMap<String, ObjEx8> getAllProducts() {
-        return products;
-    }
-
-    public ObjEx8 findInfoProductBasedOnId(String id) {
-        return products.get(id);
-    }
-    public boolean removeProductBasedOnId(String id) {
-        return products.remove(id) != null;
-    }
-
-    //update info product
-    public boolean updateInfoProduct(ObjEx8 product) {
-        if(products.containsKey(product.getId())) {
-            products.put(product.getId(), product);
-            return true;
-        }
-        return false;
-//        return products.put(product.getId(), product) != null;
-    }
-
-    public boolean saveProduct(ObjEx8 product) {
-        boolean isUpdated = products.containsKey(product.getId());
-        products.put(product.getId(), product);
-        return isUpdated; // Returns true if it was an update, false if it was an add
     }
 }
